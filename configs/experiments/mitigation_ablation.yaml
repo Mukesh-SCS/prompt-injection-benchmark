@@ -1,0 +1,37 @@
+experiment:
+  name: mitigation_ablation
+  objective: Measure incremental impact of mitigation stacks
+  output_dir: data/results
+
+trials:
+  - architecture: chatbot
+    model: gpt-4
+    attack_type: direct
+    attack_variant: ablation_v1
+    mitigation_stack: [baseline]
+    detector_stack: [d1_pattern, d2_tool_anomaly]
+    seed: 31
+
+  - architecture: chatbot
+    model: gpt-4
+    attack_type: direct
+    attack_variant: ablation_v1
+    mitigation_stack: [m1_prompt_engineering, m2_input_validation]
+    detector_stack: [d1_pattern, d2_tool_anomaly]
+    seed: 31
+
+  - architecture: chatbot
+    model: gpt-4
+    attack_type: direct
+    attack_variant: ablation_v1
+    mitigation_stack: [m1_prompt_engineering, m2_input_validation, m3_output_filtering]
+    detector_stack: [d1_pattern, d2_tool_anomaly]
+    seed: 31
+
+  - architecture: chatbot
+    model: gpt-4
+    attack_type: direct
+    attack_variant: ablation_v1
+    mitigation_stack: [m1_prompt_engineering, m2_input_validation, m3_output_filtering, m4_tool_gating, m5_memory_filter, m6_provenance]
+    detector_stack: [d1_pattern, d2_tool_anomaly, d3_behavior_consistency]
+    seed: 31

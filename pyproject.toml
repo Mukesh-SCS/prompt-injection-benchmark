@@ -1,0 +1,5 @@
+[project]
+name = "prompt-injection-benchmark"
+version = "0.1.0"
+description = "Prompt injection benchmark scaffold"
+requires-python = ">=3.10"

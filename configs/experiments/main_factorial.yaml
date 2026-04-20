@@ -1,0 +1,43 @@
+experiment:
+  name: main_factorial
+  objective: Cross-architecture prompt injection benchmarking
+  output_dir: data/results
+  export:
+    raw_jsonl: true
+    summary_csv: true
+  reproducibility:
+    deterministic: true
+    save_config_snapshot: true
+
+trials:
+  - architecture: chatbot
+    model: gpt-4
+    attack_type: direct
+    attack_variant: direct_v1
+    mitigation_stack: [baseline, m4_tool_gating]
+    detector_stack: [d1_pattern, d2_tool_anomaly, d3_behavior_consistency]
+    seed: 7
+
+  - architecture: rag
+    model: claude-3.5
+    attack_type: indirect
+    attack_variant: indirect_retrieval_v1
+    mitigation_stack: [m1_prompt_engineering, m2_input_validation, m4_tool_gating, m6_provenance]
+    detector_stack: [d1_pattern, d2_tool_anomaly]
+    seed: 11
+
+  - architecture: agent
+    model: gemini-1.5
+    attack_type: tool_output
+    attack_variant: tool_output_chain_v1
+    mitigation_stack: [m3_output_filtering, m4_tool_gating, m5_memory_filter, m6_provenance]
+    detector_stack: [d2_tool_anomaly, d3_behavior_consistency]
+    seed: 19
+
+  - architecture: agent
+    model: gpt-4
+    attack_type: memory_poisoning
+    attack_variant: memory_seed_v1
+    mitigation_stack: [full_stack]
+    detector_stack: [d1_pattern, d2_tool_anomaly, d3_behavior_consistency]
+    seed: 23

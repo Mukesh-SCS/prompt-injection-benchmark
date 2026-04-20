@@ -1,0 +1,5 @@
+name: baseline
+description: No active mitigation logic except default system execution constraints.
+mitigation_id: baseline
+enabled: true
+controls: []

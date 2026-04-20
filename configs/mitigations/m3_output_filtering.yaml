@@ -1,0 +1,8 @@
+name: m3_output_filtering
+mitigation_id: M3
+enabled: true
+redaction_patterns:
+  - "api_key"
+  - "password"
+  - "access token"
+replacement: "[REDACTED_SENSITIVE_OUTPUT]"

@@ -1,0 +1,11 @@
+name: chatbot
+kind: conversational
+components:
+  - model
+  - safety_orchestration
+  - detector_pipeline
+trust_boundary:
+  user_input: untrusted
+  model_output: untrusted
+supports_tools: false
+supports_memory: false

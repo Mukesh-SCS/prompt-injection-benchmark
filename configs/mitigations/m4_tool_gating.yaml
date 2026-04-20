@@ -1,0 +1,7 @@
+name: m4_tool_gating
+mitigation_id: M4
+enabled: true
+authorization_mode: explicit_allowlist
+allowed_tools:
+  - web_search
+default_action: deny

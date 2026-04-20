@@ -1,0 +1,7 @@
+name: claude35
+provider: anthropic
+model: claude-3.5-sonnet
+api_env: ANTHROPIC_API_KEY
+temperature: 0.0
+max_tokens: 512
+timeout_s: 60

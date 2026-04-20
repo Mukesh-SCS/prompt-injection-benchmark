@@ -1,0 +1,14 @@
+name: agent
+kind: autonomous_agent
+components:
+  - planner
+  - tool_router
+  - memory
+  - authorization_gate
+  - detector_pipeline
+trust_boundary:
+  user_input: untrusted
+  tool_output: untrusted
+  memory: untrusted
+supports_tools: true
+supports_memory: true

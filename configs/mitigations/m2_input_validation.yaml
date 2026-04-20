@@ -1,0 +1,8 @@
+name: m2_input_validation
+mitigation_id: M2
+enabled: true
+blocked_patterns:
+  - "ignore previous"
+  - "reveal system prompt"
+  - "bypass"
+action_on_match: block

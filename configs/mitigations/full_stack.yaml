@@ -1,0 +1,10 @@
+name: full_stack
+mitigation_id: FULL_STACK
+enabled: true
+stack:
+  - m1_prompt_engineering
+  - m2_input_validation
+  - m3_output_filtering
+  - m4_tool_gating
+  - m5_memory_filter
+  - m6_provenance

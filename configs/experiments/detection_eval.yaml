@@ -1,0 +1,29 @@
+experiment:
+  name: detection_eval
+  objective: Evaluate detector behavior across attack channels
+  output_dir: data/results
+
+trials:
+  - architecture: rag
+    model: claude-3.5
+    attack_type: indirect
+    attack_variant: det_indirect_v1
+    mitigation_stack: [m4_tool_gating, m6_provenance]
+    detector_stack: [d1_pattern, d2_tool_anomaly, d3_behavior_consistency]
+    seed: 41
+
+  - architecture: agent
+    model: gemini-1.5
+    attack_type: tool_output
+    attack_variant: det_tool_output_v1
+    mitigation_stack: [m4_tool_gating, m5_memory_filter]
+    detector_stack: [d1_pattern, d2_tool_anomaly, d3_behavior_consistency]
+    seed: 43
+
+  - architecture: chatbot
+    model: gpt-4
+    attack_type: direct
+    attack_variant: det_direct_v1
+    mitigation_stack: [m2_input_validation, m3_output_filtering]
+    detector_stack: [d1_pattern, d3_behavior_consistency]
+    seed: 47

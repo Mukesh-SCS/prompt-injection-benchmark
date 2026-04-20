@@ -1,0 +1,10 @@
+name: m6_provenance
+mitigation_id: M6
+enabled: true
+annotation_key: provenance
+default_label: untrusted_input
+track_sources:
+  - user_input
+  - retrieved_content
+  - tool_output
+  - memory

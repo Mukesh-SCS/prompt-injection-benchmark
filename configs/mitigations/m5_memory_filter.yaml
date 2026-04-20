@@ -1,0 +1,8 @@
+name: m5_memory_filter
+mitigation_id: M5
+enabled: true
+blocked_memory_patterns:
+  - "always obey"
+  - "override policy"
+  - "store secret"
+action_on_match: deny_write

@@ -1,0 +1,13 @@
+name: rag
+kind: retrieval_augmented
+components:
+  - retriever
+  - model
+  - provenance_tracker
+  - detector_pipeline
+trust_boundary:
+  user_input: untrusted
+  retrieved_content: untrusted
+  model_output: untrusted
+supports_tools: false
+supports_memory: false
